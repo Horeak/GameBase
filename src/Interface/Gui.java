@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Gui extends UIMenu {
-	public HashMap<org.newdawn.slick.geom.Rectangle, String[]> toolTipRendering = new HashMap<>();
+	public static HashMap<org.newdawn.slick.geom.Rectangle, String[]> toolTipRendering = new HashMap<>();
 	public GameContainer container;
 	
 	public Gui( GameContainer container, boolean b ) {
@@ -24,7 +24,7 @@ public abstract class Gui extends UIMenu {
 		}
 	}
 	
-	public void renderTooltip( int x, int y, int width, int height, String[] text ) {
+	public static void renderTooltip( int x, int y, int width, int height, String[] text ) {
 		toolTipRendering.put(new Rectangle(x, y, width, height), text);
 	}
 	
